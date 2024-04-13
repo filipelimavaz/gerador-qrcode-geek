@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador QR Code</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container" id="title-container">
+            <div class="container-inner-border">
+                <div class="container-content">
+                    <p>Gerador QR Code</p>
+                </div>
+            </div>
+        </div>
+        <img src="./img/kanto-startes.png" alt="Kanto Starters Pokémon" id="pokemon">
+        <img src="./img/battleground.png" alt="Battleground" id="battleground">
+    </header>
+    <main>
+    <div class="container" id="main-container">
+        <main class="container-inner-border">
+            <div class="container-content">
+                <p id="text-element"></p>
+                <input type="text" class="hidden" id="input-element"/>
+                <img src="img/qrcode.png" alt="QR Code" id="qr-code"/>
+            </div>
+    </div>
+    <div class="container" id="button-container">
+        <div class="container-inner-border">
+            <div class="container-content">
+                <div class="button">
+                    <span class="arrow"></span>
+                    <button id="generate-button">Gerar QRCode</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

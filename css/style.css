@@ -1,0 +1,166 @@
+/* Definição da fonte */
+@font-face {
+	font-family: "Pokemon";
+	src: url('../fonts/pokemon-gba.ttf');
+}
+
+/* Cores */
+:root {
+    --primary-bg-color: linear-gradient(to bottom, #add8e6, #34db7a);
+    --container-bg-color: #ffffff;
+    --container-border-color: #687078;
+    --button-bg-color: #ffffff;
+    --arrow-color: #444444;
+    --container-inner-bg-color: #c8c8d8;
+}
+
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Pokemon;
+    box-sizing: border-box;
+}
+
+/* Estilos do corpo da página */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--primary-bg-color);
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header #pokemon {
+    position: relative;
+    max-width: 300px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+header #battleground {
+    position: absolute;
+    width: 350px;
+    margin-top: 100px;
+    z-index: -1;
+}
+
+#title-container {
+    margin-bottom: 0.5rem;
+}
+
+#title-container .container-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Estilos do contêiner principal */
+.container {
+    width: 300px;
+    height: 50px;
+    min-height: 45px;
+    border: 2px solid var(--container-border-color);
+    border-radius: 4px;
+    display: flex;
+    transition: width 0.5s, height 0.5s;
+}
+
+/* Estilos do cabeçalho QR */
+.container-inner-border {
+    background-color: var(--container-inner-bg-color);
+    padding: 1% 4%;
+    width: 100%;
+}
+
+/* Estilos do contêiner do cabeçalho QR */
+.container-content {
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    background-color: var(--container-bg-color);
+    border-radius: 5px;
+    width: 100%; 
+    height: 100%;
+    padding: 5% 2%;
+    flex-direction: column;
+}
+
+.container-content p {
+    padding-bottom: 0.5rem;
+}
+
+.container-content input.hidden {
+    display: none;
+}
+
+.button {
+    display: flex;
+    gap: 0.3rem;
+}
+
+/* Estilos da seta */
+.arrow {
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--arrow-color);
+    animation: moveArrow 0.8s infinite alternate;
+}
+
+/* Estilos do botão do cabeçalho QR */
+.button button {
+    border: none;
+    background-color: var(--button-bg-color);
+    align-self: center;
+    margin-left: 5px; 
+}
+
+/* Estilos do contêiner expandido */
+.container.expanded {
+    width: 350px;
+    height: 80px;
+}
+
+.container.active {
+    width: 250px;
+    height: 180px;
+}
+
+#qr-code {
+    display: flex;
+    opacity: 0;
+    align-self: center;
+    justify-content: center;
+    transition: 2s;
+    z-index: -1;
+}
+
+.container.active #qr-code {
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateX(0); /* A partir da posição original */
+    }
+    to {
+        transform: translateX(5px); /* Movimento para a direita */
+    }
+}
